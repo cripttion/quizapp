@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/idtvlinerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+       android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idtvscore"
+        android:textSize="26dp"
+        android:text="Your Score is "
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@color/purple_200"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Restart quiz"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:background="@color/purple_200"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_margin="20dp"
+        android:textAllCaps="false"
+        android:padding="2dp"
+        android:id="@+id/idtvrestart"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
