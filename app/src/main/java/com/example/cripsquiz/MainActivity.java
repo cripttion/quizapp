@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button option1btn,option2btn,option3btn,option4btn;
     private ArrayList<quizmodal> quizmodalarraylist;
     Random random;
-    int currentScore = 0 , questionattempt = 1 , currentpost;
+   private int currentScore = 0 , questionattempt = 1 , currentpost;
 
 
     @Override
@@ -42,11 +42,13 @@ public class MainActivity extends AppCompatActivity {
        option1btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option1btn.getText().toString().trim().toLowerCase()));
+               if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option1btn.getText().toString().trim().toLowerCase()))
                   {
                    currentScore++;
 
                }
+
+
                questionattempt++;
                currentpost=random.nextInt(quizmodalarraylist.size());
                setDataView(currentpost);
@@ -61,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
         option2btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option2btn.getText().toString().trim().toLowerCase()));
+                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option2btn.getText().toString().trim().toLowerCase()))
                 {
                     currentScore++;
 
                 }
+
                 questionattempt++;
                 currentpost=random.nextInt(quizmodalarraylist.size());
                 setDataView(currentpost);
@@ -80,30 +83,12 @@ public class MainActivity extends AppCompatActivity {
         option3btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option3btn.getText().toString().trim().toLowerCase()));
+                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option3btn.getText().toString().trim().toLowerCase()))
                 {
                     currentScore++;
 
                 }
-                questionattempt++;
-                currentpost=random.nextInt(quizmodalarraylist.size());
-                setDataView(currentpost);
 
-
-            }
-
-
-
-        });
-
-        option3btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option3btn.getText().toString().trim().toLowerCase()));
-                {
-                    currentScore++;
-
-                }
                 questionattempt++;
                 currentpost=random.nextInt(quizmodalarraylist.size());
                 setDataView(currentpost);
@@ -117,12 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
         option4btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option4btn.getText().toString().trim().toLowerCase()));
+            public void onClick(View view) {
+                if(quizmodalarraylist.get(currentpost).getAnswer().trim().toLowerCase().equals(option4btn.getText().toString().trim().toLowerCase()))
                 {
                     currentScore++;
 
                 }
+
                 questionattempt++;
                 currentpost=random.nextInt(quizmodalarraylist.size());
                 setDataView(currentpost);
@@ -134,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
+
     }
 
     private void show_bottom_sheet(){
@@ -142,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         TextView scoretv = bottomsheetview.findViewById(R.id.idtvscore);
         Button restarttv = bottomsheetview.findViewById(R.id.idtvrestart);
         scoretv.setText("Your score \n"+currentScore+"/4");
+
 
         restarttv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,11 +151,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private  void setDataView(int currentpost){
-        if(questionattempt==4){
+        if(questionattempt==5){
           show_bottom_sheet();
         }
         else{
-            questionnumber.setText("Questions Attempted :"+questionattempt+"/10");
+            questionnumber.setText("Questions Attempted :"+questionattempt+"/4");
             questiontv.setText(quizmodalarraylist.get(currentpost).getQuestion());
             option1btn.setText(quizmodalarraylist.get(currentpost).getOption1());
             option2btn.setText(quizmodalarraylist.get(currentpost).getOption2());
@@ -184,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
         quizmodalarraylist.add(new quizmodal("who is the prime minister of India","Amit sahah","Yogi aditya nath ","Narendra modi","Lalu yadav","Narendra modi"));
         quizmodalarraylist.add(new quizmodal("Most advanced coding language ","c++","c ","java","python","python"));
         quizmodalarraylist.add(new quizmodal("who is elon musk ","a genius ","a mental ","ALien thinker","All of the above","All of the above"));
+        quizmodalarraylist.add(new quizmodal("The value of gravity ","9.8 ","10 ","10.8","both a and b","both a and b"));
+        quizmodalarraylist.add(new quizmodal("largest country in the world ","India  ","Russia ","china","USA","Russia"));
+        quizmodalarraylist.add(new quizmodal("When did india gets its freedom  ","1957","1847 ","1987","1947","1947"));
 
 
     }
